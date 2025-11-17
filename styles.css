@@ -1,0 +1,237 @@
+/* --- RESET GENERAL --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  line-height: 1.6;
+}
+
+/* --- MENÚ SUPERIOR --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(161, 121, 220, 0.95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+header img {
+  height: 100px;
+}
+
+/* Menú principal */
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #f3e9ff;
+}
+
+/* Menú desplegable móvil */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+nav ul.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* --- SECCIONES --- */
+section {
+  padding: 120px 10% 80px;
+  min-height: 100vh;
+}
+
+#home { background-color: #a179dc; }
+#OurPurpose { background-color: #986ed8; }
+#product { background-color: #9460d8; }
+#team { background-color: #814ad3; }
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+/* --- GRID DE HOME / OUR PURPOSE --- */
+.purpose-grid, .card-container {
+  display: grid;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.purpose-grid {
+  grid-template-columns: repeat(2,1fr);
+}
+
+.card-container {
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+}
+
+/* --- TARJETAS --- */
+.purpose-card, .card {
+  background: rgba(255,255,255,0.12);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.purpose-card h2, .card h2 {
+  margin-bottom: 15px;
+}
+
+.purpose-card h2 {
+  font-size: 1.8rem;
+}
+
+.purpose-card p, .card p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* --- OUR PRODUCT --- */
+.product-section {
+  max-width: 900px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.product-section h1, .product-section h3 {
+  text-align: center;
+}
+
+/* --- OUR TEAM --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 40px;
+  justify-items: center;
+  margin-top: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.team-member {
+  text-align: center;
+  background-color: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 280px;
+  transition: transform 0.3s;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.team-member h4 {
+  font-weight: 600;
+}
+
+.team-member p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(255,255,255,0.1);
+  font-size: 0.9rem;
+}
+
+/* --- ANIMACIONES SCROLL --- */
+.fade-in.visible, .card.visible, .product-section.visible, .team-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: repeat(2,1fr); }
+  .card-container { grid-template-columns: 1fr; }
+  .purpose-grid { grid-template-columns: 1fr; }
+  header { padding: 10px 30px; }
+}
+
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .card-container { grid-template-columns: 1fr; }
+  .purpose-grid { grid-template-columns: 1fr; }
+
+  section { padding: 100px 20px 60px; }
+
+  /* Menú desplegable */
+  .menu-toggle { display: flex; }
+  nav ul { display: none; flex-direction: column; width: 100%; }
+  nav ul.show { display: flex; }
+}

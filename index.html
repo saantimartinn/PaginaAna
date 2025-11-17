@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Company</title>
+
+  <!-- Tipografía moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- MENÚ SUPERIOR -->
+  <header>
+    <img src="images/logo-removebg-preview.png" alt="Company Logo" />
+
+    <!-- Botón hamburguesa para móviles -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav>
+      <ul id="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#OurPurpose">Our Purpose</a></li>
+        <li><a href="#product">Our Product</a></li>
+        <li><a href="#team">Our Team</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="purpose-grid">
+      <!-- Tarjeta 1: Título + Slogan -->
+      <div class="purpose-card fade-in">
+        <h2>We Innovate for Better Treatments</h2>
+        <p>Smart, localized and next-generation immunotherapy for orphan tumors.</p>
+      </div>
+
+      <!-- Tarjeta 2: Imagen -->
+      <div class="purpose-card fade-in image-card">
+        <img src="images/home.jpg" alt="Purpose Image">
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PURPOSE -->
+  <section id="OurPurpose">
+    <h1>OUR PURPOSE</h1>
+    <div class="card-container">
+      <div class="card fade-in">
+        <h2>MISSION</h2>
+        <p>Develop an innovative immunotherapy for orphan indications with limited treatment options.</p>
+      </div>
+      <div class="card fade-in">
+        <h2>VISION</h2>
+        <p>Become a leading next-generation immunotherapy startup, advancing smart and localized treatments for orphan tumors.</p>
+      </div>
+      <div class="card fade-in">
+        <h2>VALUES</h2>
+        <ul>
+          <li><strong>Scientific innovation:</strong> cutting-edge technology</li>
+          <li><strong>Rigor and transparency:</strong> solid evidence</li>
+          <li><strong>Commitment to patients:</strong> safety and quality of life</li>
+          <li><strong>Collaboration:</strong> partners and investors</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PRODUCT -->
+  <section id="product">
+    <div class="product-section fade-in">
+      <h1>OUR PRODUCT</h1>
+      <p>
+        Tumor cells frequently suppress anti-tumor immunity through PD-1/PD-L1 signaling, leading to T-cell exhaustion and reduced cytotoxic activity.
+      </p>
+      <p>
+        Our therapeutic strategy is designed to interfere with this pathway while simultaneously enhancing local immune activation within the tumor microenvironment.
+      </p>
+      <p>
+        The intended outcome is a dual-mechanism immunotherapy capable of restoring T-cell function, promoting local immune infiltration, and potentially reducing systemic toxicity.
+      </p>
+
+      <h3>THERAPEUTIC INDICATIONS</h3>
+      <ul>
+        <li><strong>Head and neck squamous cell carcinoma (HNSCC):</strong> Suitable for therapies that block immune checkpoints and enhance cytokine signaling.</li>
+        <li><strong>Malignant pleural mesothelioma (MPM):</strong> Targeted cytokine-checkpoint fusion may convert a “cold” microenvironment into an immune-responsive state.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- OUR TEAM -->
+  <section id="team">
+    <h1>OUR TEAM</h1>
+    <div class="team-grid fade-in">
+      <div class="team-member">
+        <img src="images/Ana.jpeg" alt="Ana Rodriguez">
+        <h4>ANA RODRIGUEZ</h4>
+        <p>Direction marketing and communication</p>
+        <p>CEO & CMO</p>
+      </div>
+      <div class="team-member">
+        <img src="ruta/a/foto-carlos.jpg" alt="Carlos Tur">
+        <h4>CARLOS TUR</h4>
+        <p>Finances</p>
+        <p>CFO</p>
+      </div>
+      <div class="team-member">
+        <img src="ruta/a/foto-carla.jpg" alt="Carla Gracia">
+        <h4>CARLA GRACIA</h4>
+        <p>Preclinical investigation</p>
+        <p>CSO</p>
+      </div>
+      <div class="team-member">
+        <img src="ruta/a/foto-alejandro.jpg" alt="Alejandro de Udaeta">
+        <h4>ALEJANDRO DE UDAETA</h4>
+        <p>Clinical development</p>
+        <p>CSO</p>
+      </div>
+      <div class="team-member">
+        <img src="ruta/a/foto-jade.jpg" alt="Jade Begerano">
+        <h4>JADE BEGERANO</h4>
+        <p>Galenics and production</p>
+        <p>CMC</p>
+      </div>
+      <div class="team-member">
+        <img src="ruta/a/foto-angel.jpg" alt="Angel Matesanz">
+        <h4>ANGEL MATESANZ</h4>
+        <p>Regulatory</p>
+        <p>Head of Regulatory Affairs</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Your Company — All rights reserved.
+  </footer>
+
+  <!-- SCRIPT: Animación scroll + menú desplegable -->
+  <script>
+    // Animación scroll
+    const elements = document.querySelectorAll('.fade-in, .card, .product-section, .team-grid');
+    const showOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < triggerBottom) el.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    showOnScroll();
+
+    // Menú desplegable móvil
+    const toggle = document.getElementById('menu-toggle');
+    const navList = document.getElementById('nav-list');
+
+    toggle.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
