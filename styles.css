@@ -1,4 +1,8 @@
 /* RESET GENERAL */
+
+section:not(#team) {
+  text-align: justify;
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +11,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: white;
   line-height: 1.6;
 }
@@ -197,4 +201,9 @@ footer {
     font-size: 1rem;
   }
 }
+h1, h2, h3 {
+  text-align: center;
+}
+
+
 
