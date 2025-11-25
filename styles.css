@@ -18,7 +18,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(161, 121, 220, 0.95);
+  background: #312686;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,11 +66,11 @@ section {
   min-height: 100vh;
 }
 
-#home { background-color: #a179dc; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
-#OurPurpose { background-color: #986ed8; }
-#product { background-color: #9460d8; }
-#indications { background-color: #8751d8; }
-#team { background-color: #814ad3; }
+#home { background-color: #3a3088; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
+#OurPurpose { background-color: #312686; }
+#product { background-color: #3a3088; }
+#indications { background-color: #312686; }
+#team { background-color: #3a3088; }
 
 h1,h2,h3 { font-weight: 700; margin-bottom: 20px; }
 p { margin-bottom: 15px; font-weight: 300; }
@@ -151,7 +151,7 @@ p { margin-bottom: 15px; font-weight: 300; }
 footer {
   text-align: center;
   padding: 30px;
-  background-color: rgba(255,255,255,0.1);
+  background: #312686;
   font-size: 0.9rem;
 }
 
@@ -197,3 +197,4 @@ footer {
     font-size: 1rem;
   }
 }
+
