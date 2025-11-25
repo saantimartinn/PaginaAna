@@ -1,4 +1,4 @@
-/* --- RESET GENERAL --- */
+/* RESET GENERAL */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* --- MENÚ SUPERIOR --- */
+/* HEADER */
 header {
   position: fixed;
   top: 0;
@@ -27,19 +27,14 @@ header {
   backdrop-filter: blur(5px);
 }
 
-header img {
-  height: 100px;
-}
+header img { height: 100px; }
 
-/* Menú principal */
 nav ul {
   display: flex;
   list-style: none;
 }
 
-nav ul li {
-  margin-left: 30px;
-}
+nav ul li { margin-left: 30px; }
 
 nav ul li a {
   text-decoration: none;
@@ -48,11 +43,9 @@ nav ul li a {
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #f3e9ff;
-}
+nav ul li a:hover { color: #f3e9ff; }
 
-/* Menú desplegable móvil */
+/* MENU HAMBURGUESA */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -63,111 +56,75 @@ nav ul li a:hover {
   height: 3px;
   width: 25px;
   background: white;
-  margin: 4px 0;
+  margin-bottom: 5px;
   border-radius: 2px;
 }
 
-nav ul.show {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-/* --- SECCIONES --- */
+/* SECCIONES */
 section {
   padding: 120px 10% 80px;
   min-height: 100vh;
 }
 
-#home { background-color: #a179dc; }
+#home { background-color: #a179dc; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; }
 #OurPurpose { background-color: #986ed8; }
 #product { background-color: #9460d8; }
+#indications { background-color: #8751d8; }
 #team { background-color: #814ad3; }
 
-h1, h2, h3 {
-  font-weight: 700;
-  margin-bottom: 20px;
-}
+h1,h2,h3 { font-weight: 700; margin-bottom: 20px; }
+p { margin-bottom: 15px; font-weight: 300; }
 
-p {
-  margin-bottom: 15px;
-  font-weight: 300;
-}
+/* HOME HERO */
+.home-hero { text-align: center; }
+.home-hero img { max-width: 500px; width: 100%; border-radius: 15px; margin-top: 20px; }
 
-/* --- GRID DE HOME / OUR PURPOSE --- */
-.purpose-grid, .card-container {
+/* CARDS */
+.card-container {
   display: grid;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 30px;
   margin-top: 40px;
 }
 
-.purpose-grid {
-  grid-template-columns: repeat(2,1fr);
-}
-
-.card-container {
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-}
-
-/* --- TARJETAS --- */
-.purpose-card, .card {
-  background: rgba(255,255,255,0.12);
-  padding: 30px;
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
   border-radius: 20px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.purpose-card h2, .card h2 {
-  margin-bottom: 15px;
-}
-
-.purpose-card h2 {
-  font-size: 1.8rem;
-}
-
-.purpose-card p, .card p {
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-.image-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  object-fit: cover;
-}
-
-/* --- OUR PRODUCT --- */
-.product-section {
-  max-width: 900px;
-  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
-  text-align: center;
-  padding: 0 20px;
 }
 
-.product-section h1, .product-section h3 {
-  text-align: center;
+.card.visible { opacity: 1; transform: translateY(0); }
+
+.card h2 { font-size: 1.4rem; margin-bottom: 15px; }
+.card ul { list-style: disc; padding-left: 20px; }
+
+/* PRODUCT */
+.product-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* --- OUR TEAM --- */
+.product-container p { margin-bottom: 15px; }
+
+/* THERAPEUTIC INDICATIONS */
+.indications-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.indications-container ul { list-style: disc; padding-left: 20px; }
+
+/* TEAM */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   gap: 40px;
   justify-items: center;
   margin-top: 40px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
 }
 
 .team-member {
@@ -180,28 +137,17 @@ p {
   transition: transform 0.3s;
 }
 
-.team-member:hover {
-  transform: translateY(-5px);
-}
+.team-member:hover { transform: translateY(-5px); }
 
 .team-member img {
   width: 100%;
-  border-radius: 50%;
-  margin-bottom: 15px;
   height: 220px;
   object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
 }
 
-.team-member h4 {
-  font-weight: 600;
-}
-
-.team-member p {
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-/* --- FOOTER --- */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
@@ -209,29 +155,45 @@ footer {
   font-size: 0.9rem;
 }
 
-/* --- ANIMACIONES SCROLL --- */
-.fade-in.visible, .card.visible, .product-section.visible, .team-grid.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* ANIMACION SCROLL */
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 900px) {
+/* RESPONSIVE */
+@media(max-width:900px){
   .team-grid { grid-template-columns: repeat(2,1fr); }
-  .card-container { grid-template-columns: 1fr; }
-  .purpose-grid { grid-template-columns: 1fr; }
   header { padding: 10px 30px; }
 }
 
-@media (max-width: 600px) {
+@media(max-width:600px){
   .team-grid { grid-template-columns: 1fr; }
-  .card-container { grid-template-columns: 1fr; }
-  .purpose-grid { grid-template-columns: 1fr; }
-
-  section { padding: 100px 20px 60px; }
-
-  /* Menú desplegable */
-  .menu-toggle { display: flex; }
-  nav ul { display: none; flex-direction: column; width: 100%; }
+  header { flex-direction: column; }
+  nav ul { flex-direction: column; align-items: center; display: none; }
   nav ul.show { display: flex; }
+  nav ul li { margin: 10px 0; }
+  .menu-toggle { display: flex; }
+}
+/* HERO SLOGAN */
+.hero-content {
+  font-size: 1.8rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0.95;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+}
+
+/* Responsive */
+@media(max-width: 900px){
+  .hero-content {
+    font-size: 1.2rem;
+  }
+}
+
+@media(max-width: 600px){
+  .hero-content {
+    font-size: 1rem;
+  }
 }
