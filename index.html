@@ -6,7 +6,10 @@
   <title>Your Company</title>
 
   <!-- Tipografía moderna -->
- <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+
   
   <!-- CSS externo -->
   <link rel="stylesheet" href="styles.css">
@@ -15,7 +18,7 @@
 
   <!-- MENÚ SUPERIOR -->
   <header>
-    <img src="logo-removebg-preview.png" alt="Company Logo" />
+    <img src="images/logo-removebg-preview.png" alt="Company Logo" />
 
     <!-- Botón hamburguesa para móviles -->
     <div class="menu-toggle" id="menu-toggle">
@@ -39,25 +42,37 @@
   <section id="home" class="home-hero fade-in">
     <div class="hero-content">
       <h1>Taking innovation beyond the limits of cancer</h1>
+      <!-- Colaboración -->
+      <div class="collaboration fade-in">
+        <p>En colaboración con:</p>
+        <img src="images/colaboracion.jpeg" alt="Partner Logo">
+      </div>
     </div>
     <div class="hero-image">
-      <img src="home.jpg" alt="Hero Image">
+      <img src="images/home.jpg" alt="Hero Image">
     </div>
   </section>
 
   <!-- OUR PURPOSE -->
-  <section id="OurPurpose" class="fade-in">
+  <section id="OurPurpose">
     <h1>OUR PURPOSE</h1>
     <div class="card-container">
-      <div class="card">
+      <!-- MISSION -->
+      <div class="card fade-in">
         <h2>MISSION</h2>
         <p>Develop an innovative immunotherapy for orphan indications with limited treatment options.</p>
+        <img src="images/mision.png" alt="Mission Icon" class="corner-image">
       </div>
-      <div class="card">
+
+      <!-- VISION -->
+      <div class="card fade-in">
         <h2>VISION</h2>
         <p>Become a leading next-generation immunotherapy startup, advancing smart and localized treatments for orphan tumors.</p>
+        <img src="images/vision.png" alt="Puzzle" class="corner-image">
       </div>
-      <div class="card">
+
+      <!-- VALUES -->
+      <div class="card fade-in">
         <h2>VALUES</h2>
         <ul>
           <li><strong>Scientific innovation:</strong> cutting-edge technology</li>
@@ -65,9 +80,11 @@
           <li><strong>Commitment to patients:</strong> safety and quality of life</li>
           <li><strong>Collaboration:</strong> partners and investors</li>
         </ul>
+        <img src="images/values.png" alt="Values Icon" class="corner-image">
       </div>
     </div>
   </section>
+
 
   <!-- OUR PRODUCT -->
   <section id="product" class="fade-in">
@@ -105,37 +122,37 @@
     <h1>OUR TEAM</h1>
     <div class="team-grid">
       <div class="team-member">
-        <img src="Ana.jpeg" alt="Ana Rodriguez">
+        <img src="images/Ana.jpeg" alt="Ana Rodriguez">
         <h4>ANA RODRIGUEZ</h4>
         <p>Direction marketing and communication</p>
         <p>CEO & CMO</p>
       </div>
       <div class="team-member">
-        <img src="Carlos.jpeg" alt="Carlos Tur">
+        <img src="images/Carlos.jpeg" alt="Carlos Tur">
         <h4>CARLOS TUR</h4>
         <p>Finances</p>
         <p>CFO</p>
       </div>
       <div class="team-member">
-        <img src="Carla.jpeg" alt="Carla Gracia">
+        <img src="images/Carla.jpeg" alt="Carla Gracia">
         <h4>CARLA GRACIA</h4>
         <p>Preclinical investigation</p>
         <p>CSO</p>
       </div>
       <div class="team-member">
-        <img src="Alejandro.JPG" alt="Alejandro de Udaeta">
+        <img src="images/Alejandro.JPG" alt="Alejandro de Udaeta">
         <h4>ALEJANDRO DE UDAETA</h4>
         <p>Clinical development</p>
         <p>CSO</p>
       </div>
       <div class="team-member">
-        <img src="Jade.jpeg" alt="Jade Begerano">
+        <img src="images/Jade.jpeg" alt="Jade Begerano">
         <h4>JADE BEGERANO</h4>
         <p>Galenics and production</p>
         <p>CMC</p>
       </div>
       <div class="team-member">
-        <img src="Angel.jpeg" alt="Angel Matesanz">
+        <img src="images/Angel.jpeg" alt="Angel Matesanz">
         <h4>ANGEL MATESANZ</h4>
         <p>Regulatory</p>
         <p>Head of Regulatory Affairs</p>
@@ -144,9 +161,28 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    © 2025 INTER12 SOLUTIONS — All rights reserved.
+ <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="images/logo-removebg-preview.png" alt="Company Logo">
+      </div>
+      <div class="footer-center">
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#OurPurpose">Our Purpose</a></li>
+            <li><a href="#product">Our Product</a></li>
+            <li><a href="#indications">Therapeutic Indications</a></li>
+            <li><a href="#team">Our Team</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-right">
+        <p>© 2025 INTER12 SOLUTIONS — All rights reserved.</p>
+      </div>
+    </div>
   </footer>
+
 
   <!-- SCRIPT: Animación scroll + menú desplegable -->
   <script>
@@ -172,6 +208,3 @@
 
 </body>
 </html>
-
-
-
