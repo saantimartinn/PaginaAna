@@ -3,6 +3,7 @@
 section:not(#team) {
   text-align: justify;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -81,7 +82,7 @@ p { margin-bottom: 15px; font-weight: 300; }
 
 /* HOME HERO */
 .home-hero { text-align: center; }
-.home-hero img { max-width: 500px; width: 100%; border-radius: 15px; margin-top: 20px; }
+.home-hero img { max-width: 1500px; width: 100%; border-radius: 15px; margin-top: 20px; }
 
 /* CARDS */
 .card-container {
@@ -92,14 +93,28 @@ p { margin-bottom: 15px; font-weight: 300; }
 }
 
 .card {
-  background: rgba(255,255,255,0.1);
+  position: relative; /* para que la imagen se posicione dentro de la tarjeta */
+  background: rgba(255, 255, 255, 0.1);
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  overflow: hidden;
 }
+
+.card .corner-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+}
+.collaboration img {
+  max-width: 300px; /* tamaño máximo reducido */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 
 .card.visible { opacity: 1; transform: translateY(0); }
 
@@ -152,12 +167,7 @@ p { margin-bottom: 15px; font-weight: 300; }
 }
 
 /* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #312686;
-  font-size: 0.9rem;
-}
+
 
 /* ANIMACION SCROLL */
 .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
@@ -203,7 +213,64 @@ footer {
 h1, h2, h3 {
   text-align: center;
 }
+footer {
+  background-color: #312686; /* Color del fondo actualizado */
+  padding: 20px 10%;
+  font-size: 0.9rem;
+}
 
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
+.footer-left img {
+  height: 50px;
+}
 
+.footer-center ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-center ul li {
+  margin: 0 15px;
+}
+
+.footer-center ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-center ul li a:hover {
+  color: #f3e9ff;
+}
+
+.footer-right {
+  color: white;
+}
+
+/* Responsive */
+@media(max-width: 800px){
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .footer-center ul {
+    flex-direction: column;
+  }
+
+  .footer-center ul li {
+    margin: 5px 0;
+  }
+}
 
